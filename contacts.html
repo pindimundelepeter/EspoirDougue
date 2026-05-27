@@ -1,0 +1,91 @@
+<!-- ========================= -->
+<!-- FICHIER : contact.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - ESPOIR DE DOUGUE</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  
+</head>
+
+<body>
+
+<header>
+  <img src="image/Espoir-de-Dougue.png"  />
+  <h1>Contact</h1>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="apropos.html">À propos</a>
+  <a href="projets.html">Projets</a>
+  <a href="contacts.html">Contact</a>
+  <a href="actualite.html">Actualités</a>
+  <a href="don.html">Faire un don</a>
+  <a href="galerie.html">Galerie photos</a>
+</nav>
+
+<section>
+  <h2>Contactez-nous</h2>
+
+  <form id="mon-formulaire">
+
+    <input type="text" id="nom" placeholder="Votre nom">
+    <br>
+    <input type="email" id="email" placeholder="Votre email">
+    <br>
+    <select name="Sujet" required style="width:300px; padding:12px; border:1px solid #ccc; border-radius:5px;">
+  <option value="" disabled selected>   Choisir un sujet </option>
+  <option value="Bénévolat">Bénévolat</option>
+  <option value="Partenariat">Partenariat</option>
+  <option value="Information">Demande d'information</option>
+  <option value="Autre">Autre</option>
+</select>
+<br>
+    <textarea id="message" rows="5" placeholder="Votre message"></textarea>
+    <br>
+    <button type="submit">Envoyer</button>
+
+  </form>
+
+  <p id="confirmation" style="display:none; color: green; font-weight: 500;">
+    ✓ Message envoyé avec succès !
+  </p>
+
+</section>
+
+<script>
+  document.getElementById('mon-formulaire').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch('https://formspree.io/f/mvzyvywe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nom: document.getElementById('nom').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        sujet: document.getElementById('sujet').value
+      })
+    }).then(function() {
+      document.getElementById('mon-formulaire').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    });
+  });
+</script>
+
+<footer>
+ Téléphone:  06 29 27 99 01
+</footer>
+<footer>
+  Adresse: <a href="https://www.google.com/maps?q=9+All.+Bossuet,+77000+Melun" target="_blank" style="color:white;">9 All. Bossuet, 77000 Melun</a>
+</footer>
+<footer>
+  © 2026 ESPOIR DE DOUGUE - Tous droits réservés   
+</footer>
+
+</body>
+</html>
