@@ -12,44 +12,27 @@
 
 <body>
 
-  <header>
-  <img src="image/Espoir-de-Dougue.png"  />
-  <h1>ESPOIR DE DOUGUE</h1>
-</header>
-  
-
-  <nav>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Ouvrir le menu">&#9776;</button>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
-    <a href="projets.html">Projets</a>
-    <a href="contacts.html">Contact</a>
-    <a href="actualite.html">Actualités</a>
-    <a href="don.html">Faire un don</a>
-    <a href="galerie.html">Galerie photos</a>
-  </div>
-</nav>
-
-<script>
-  function toggleMenu() {
-    var links = document.getElementById('nav-links');
-    var btn = document.querySelector('.hamburger');
-    links.classList.toggle('open');
-    btn.innerHTML = links.classList.contains('open') ? '&#10005;' : '&#9776;';
-  }
-</script>
+  <!-- Le header et nav sont chargés automatiquement ici -->
+  <div id="header-placeholder"></div>
+  <script src="nav.js"></script>
 <section class="hero">
   <div>
     <h2>Un avenir plein d'espoir</h2>
     <p>
       Ensemble pour le développement, la solidarité et l'avenir.
     </p>
-    <a href="contacts.html">
-    <button style="margin-top: 1rem; background: green; color: #000000; border: green; border-radius: 8px; padding: 12px 28px; font-size: 16px; font-weight: 500; cursor: pointer;">
-      Nous rejoindre
-    </button>
-    </a>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+      <a href="contacts.html">
+        <button style="background: green; color: #000000; border: 2px solid green; border-radius: 8px; padding: 12px 28px; font-size: 16px; font-weight: 500; cursor: pointer;">
+          Nous rejoindre
+        </button>
+      </a>
+      <a href="don.html">
+        <button style="background: #fdd835; color: #1b5e20; border: 2px solid #fdd835; border-radius: 8px; padding: 12px 28px; font-size: 16px; font-weight: 700; cursor: pointer;">
+          ❤ Faire un don
+        </button>
+      </a>
+    </div>
   </div>
 </section>
 
